@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Muli", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  background-color: rgb(198, 225, 241);
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}  
+
+
+.panel {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  color: #fff;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 30px;
+
+
+}
+
+.panel h3 {
+  font-size: 24px;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+ 
+}
+
+.panel.active {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  transition: all 0.3s ease-in-out;
+  width: 60vw;
+
+  
+}
+
+/* aca se expande la imagen seleccionada*/
+.panel.active:hover{
+  width: 600vw;
+
+
+}
+
+
+/*aca corrigo position de los titulos de las imagenes para que se coloquen abajo en izq*/
+.panel.active:hover h3 {
+  position: absolute;
+  top: 92%;
+  right: 10%;
+  color: #fff;
+  font-size: 15px;
+  opacity: 5;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 90vw;
+  }
+  .panel.active:hover{
+    width: 600vw;
+  
+  }
+
+  .panel.active h3{
+    font-size: 10px;
+
+  }
+  .panel:nth-of-type(4) {
+    display: none;
+  }
+
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
